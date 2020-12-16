@@ -1,0 +1,22 @@
+[package]
+name = "async-io-abstract"
+version = "0.1.0"
+authors = ["quininer <quininer@live.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[features]
+tokio-impl = [ "tokio" ]
+async-io-impl = [ "async-io" ]
+tokio-api = [ "tokio" ]
+futures-io-api = [ "futures-io" ]
+
+[dependencies]
+pin-project-lite = "0.2"
+tokio = { version = "0.3", features = [ "net" ], optional = true }
+async-io = { version = "1", optional = true }
+futures-io = { version = "0.3", optional = true }
+
+[dev-dependencies]
+anyhow = "1"
